@@ -161,7 +161,7 @@ function tick(){
 function timeout(){
  if(busy)return;busy=true;paused=false;updatePauseButton();
  $("feedback").innerHTML="";setAnswer(String(card.a*card.b));
- setTimeout(()=>{busy=false;pick()},5000);
+ setTimeout(()=>{busy=false;pick()},3000);
 }
 function pick(){
  if(busy||!currentName)return;
@@ -196,7 +196,7 @@ function submit(){
    card.box=1;card.streak=0;setAnswer(String(correct));$("feedback").innerHTML="";
  }
  save();renderTeacher();
- setTimeout(()=>{busy=false;if(all6())showDiploma();else pick()},5000);
+ setTimeout(()=>{busy=false;if(all6())showDiploma();else pick()},3000);
 }
 document.querySelectorAll(".key,.answerSubmit").forEach(b=>b.onclick=()=>{
  if(busy)return;let k=b.dataset.key;
